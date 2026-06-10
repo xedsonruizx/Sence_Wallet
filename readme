@@ -1,5 +1,55 @@
-﻿
+﻿# Sence Wallet
 
-Aplicacion web con menu creada con bootstrap js y css.
+Aplicación web de monedero digital creada como proyecto de curso.
 
-Credenciales admin / admin
+## Descripción
+
+Sence Wallet es una aplicación de ejemplo que permite iniciar sesión, depositar dinero, enviar transferencias y ver el historial de movimientos. Los datos de saldo y transacciones se almacenan localmente en el navegador usando `localStorage`.
+
+## Funcionalidades
+
+- Login de usuario con credenciales fijas.
+- Página de menú principal con saldo actualizado.
+- Depósitos con validación de monto positivo.
+- Envío de dinero a contactos guardados.
+- Registro de movimientos y historial de transacciones.
+- Navegación basada en plantilla `master.html`.
+
+## Credenciales
+
+- Usuario: `admin`
+- Contraseña: `admin`
+
+## Tecnología y herramientas usadas
+
+- HTML5
+- CSS3
+- JavaScript puro (ES5/ES6)
+- Bootstrap 4
+- Font Awesome
+- `localStorage` para persistencia de saldo y movimientos
+
+## Estructura del proyecto
+
+- `index.html` - entrada principal del proyecto.
+- `css/estilos.css` - estilos personalizados.
+- `js/` - lógica de la aplicación:
+  - `login.js` - autenticación.
+  - `wallet.js` - saldo y movimientos.
+  - `deposit.js` - formulario de depósitos.
+  - `sendmoney.js` - envíos de dinero y contactos.
+  - `transactions.js` - historial de movimientos.
+  - `validation.js` - validaciones comunes.
+  - `page-redirect.js` - redirección a la plantilla maestra.
+- `web/` - páginas de contenido y plantilla.
+
+## Uso
+
+1. Abrir `index.html` en un navegador.
+2. Iniciar sesión con las credenciales indicadas.
+3. Navegar entre el menú, depósitos, envíos y transacciones.
+
+## Notas
+
+- Si se borran los datos del sitio del navegador, se pierde el saldo y el historial de transacciones porque se almacenan en `localStorage`.
+- Esta aplicación está diseñada como prototipo y no usa backend.
