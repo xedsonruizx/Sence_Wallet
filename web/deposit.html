@@ -1,0 +1,27 @@
+<div class="page-card mx-auto" style="max-width: 520px;">
+  <div class="page-header mb-4">
+    <h2>Depositar</h2>
+    <p class="text-muted">Ingresa el monto que deseas depositar en tu cuenta.</p>
+  </div>
+
+  <form id="deposit-form" novalidate>
+    <div class="form-group">
+      <label for="depositAmount">Monto a depositar</label>
+      <input type="number" class="form-control" id="depositAmount" min="1" step="0.01" placeholder="Ingresa el monto">
+    </div>
+    <button type="submit" class="btn btn-primary btn-block">Realizar depósito</button>
+    <p id="deposit-message" class="form-feedback" aria-live="polite" hidden></p>
+  </form>
+
+  <div class="mt-3">
+    <a href="master.html?page=menu" class="btn btn-secondary btn-block">Volver al Menú Principal</a>
+  </div>
+</div>
+
+<script src="../js/page-redirect.js"></script>
+<script src="../js/validation.js"></script>
+<script src="../js/wallet.js"></script>
+<script src="../js/deposit.js"></script>
+<noscript>
+    <p class="text-muted">Usa <a href="layout/master.html?page=deposit">master.html?page=deposit</a> para ver esta página correctamente.</p>
+</noscript>

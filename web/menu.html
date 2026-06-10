@@ -1,0 +1,45 @@
+<div class="container py-4">
+    <div class="card shadow-sm mx-auto menu-card" style="max-width: 720px;">
+        <div class="card-body">
+            <h2 class="card-title mb-4">Menú Principal</h2>
+
+            <div class="row mb-4">
+                <div class="col-12 col-md-6 mb-3 mb-md-0">
+                    <div class="balance-panel h-100">
+                        <p class="mb-1 text-muted">Dinero en cuenta:</p>
+                        <h3 id="account-balance" class="balance-amount">$60.000</h3>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="summary-panel h-100">
+                        <p class="mb-1 text-muted">Operaciones registradas:</p>
+                        <h4 class="mb-2"><span id="movements-count">0</span></h4>
+                        <p class="mb-1 text-muted small">Última operación:</p>
+                        <p id="last-operation" class="mb-0 small">Sin operaciones recientes.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-md-4 mb-2 auth-only">
+                    <a href="master.html?page=deposit" class="btn btn-primary btn-block menu-link" data-screen="Depositar">Depositar</a>
+                </div>
+                <div class="col-12 col-md-4 mb-2 auth-only">
+                    <a href="master.html?page=sendmoney" class="btn btn-primary btn-block menu-link" data-screen="Enviar Dinero">Enviar Dinero</a>
+                </div>
+                <div class="col-12 col-md-4 mb-2 auth-only">
+                    <a href="master.html?page=transactions" class="btn btn-primary btn-block menu-link" data-screen="Últimos Movimientos">Últimos Movimientos</a>
+                </div>
+            </div>
+
+            <p id="redirect-message" class="redirect-legend text-center mt-3 mb-0" aria-live="polite" hidden></p>
+        </div>
+    </div>
+</div>
+
+<script src="../js/page-redirect.js"></script>
+<script src="../js/wallet.js"></script>
+<script src="../js/menu.js"></script>
+<noscript>
+    <p class="text-muted">Usa <a href="layout/master.html?page=menu">master.html?page=menu</a> para ver el menú correctamente.</p>
+</noscript>
