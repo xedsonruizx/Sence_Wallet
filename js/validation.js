@@ -1,3 +1,5 @@
+// Utilidades de validación y mensajes de formulario.
+// Centraliza el control de errores y la presentación de feedback en pantalla.
 window.SenceWalletValidation = (function() {
     function showMessage(elementId, message, isError) {
         var element = document.getElementById(elementId);
@@ -31,15 +33,18 @@ window.SenceWalletValidation = (function() {
     }
 
     function validateRequired(value) {
+        // Comprueba que exista texto distinto de espacios en blanco.
         return String(value || '').trim().length > 0;
     }
 
     function validateAmount(value) {
+        // Acepta solo números mayores que cero.
         var amount = parseFloat(value);
         return !isNaN(amount) && amount > 0;
     }
 
     function validateCbu(value) {
+        // CBU válido entre 10 y 22 dígitos numéricos.
         return /^\d{10,22}$/.test(String(value || '').trim());
     }
 

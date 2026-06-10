@@ -1,3 +1,6 @@
+// Módulo de estado del wallet.
+// Persistencia de saldo y movimientos usando localStorage,
+// con formato de moneda y fecha para mostrar en la UI.
 window.SenceWalletBalance = (function() {
     const balanceKey = 'senceWalletBalance';
     const movementsKey = 'senceWalletMovements';
@@ -33,6 +36,7 @@ window.SenceWalletBalance = (function() {
     }
 
     function deposit(amount) {
+        // Aumenta saldo y guarda un registro de depósito.
         const newBalance = getBalance() + amount;
         localStorage.setItem(balanceKey, newBalance.toString());
         addMovement({
@@ -44,6 +48,7 @@ window.SenceWalletBalance = (function() {
     }
 
     function withdraw(amount, description) {
+        // Resta dinero solo si hay saldo suficiente.
         const current = getBalance();
         if (amount > current) {
             return null;

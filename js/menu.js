@@ -1,7 +1,10 @@
+// Módulo de la pantalla principal del menú.
+// Muestra el saldo, resumen de movimientos y controla navegación entre secciones.
 window.SenceWalletMenu = (function() {
     function setupMenuLinks() {
         var messageEl = document.getElementById('redirect-message');
 
+        // Añade comportamiento a los enlaces del menú para mostrar un mensaje antes de redirigir.
         document.querySelectorAll('.menu-link').forEach(function(link) {
             link.addEventListener('click', function(event) {
                 event.preventDefault();
@@ -45,6 +48,7 @@ window.SenceWalletMenu = (function() {
             return;
         }
 
+        // Presenta el último movimiento o un mensaje si no hay movimientos.
         if (movements.length === 0) {
             lastOpEl.textContent = 'Sin operaciones recientes.';
             return;
@@ -64,6 +68,7 @@ window.SenceWalletMenu = (function() {
     }
 
     function init() {
+        // Asegura que la navegación directal vaya a master.html con query string.
         window.SenceWalletPageRedirect('menu');
         refreshDashboard();
         setupMenuLinks();

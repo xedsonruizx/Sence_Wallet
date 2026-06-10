@@ -1,3 +1,5 @@
+// Módulo de autenticación para la pantalla de login.
+// Valida credenciales de usuario y controla la navegación al menú principal.
 window.SenceWalletAuth = (function() {
     var authKey = 'senceWalletUser';
     var validUser = 'admin';
@@ -5,6 +7,7 @@ window.SenceWalletAuth = (function() {
     var validation = window.SenceWalletValidation;
 
     function init() {
+        // Redirige a la página principal si se accede directamente a login.html.
         window.SenceWalletPageRedirect('login');
         setupLoginForm();
     }
@@ -24,6 +27,7 @@ window.SenceWalletAuth = (function() {
             var pass = document.getElementById('password').value.trim();
             var hasError = false;
 
+            // Validaciones básicas: campos obligatorios.
             if (!validation.validateRequired(user)) {
                 validation.setFieldError('username', true);
                 hasError = true;
@@ -39,6 +43,7 @@ window.SenceWalletAuth = (function() {
                 return;
             }
 
+            // Autenticación simulada con valores fijos para demo.
             if (user === validUser && pass === validPass) {
                 localStorage.setItem(authKey, validUser);
                 validation.showMessage('login-message', 'Bienvenido admin. Redirigiendo al menú...', false);

@@ -1,3 +1,5 @@
+// Módulo de historial de transacciones.
+// Se encarga de listar los movimientos registrados en el wallet local.
 window.SenceWalletTransactions = (function() {
     function escapeHtml(text) {
         var div = document.createElement('div');
@@ -24,6 +26,7 @@ window.SenceWalletTransactions = (function() {
             var isDeposit = movement.type === 'deposit';
             item.className = 'list-group-item movement-item';
 
+            // Cada movimiento se muestra con descripción, fecha y monto.
             item.innerHTML =
                 '<div class="d-flex justify-content-between align-items-start">' +
                     '<div>' +

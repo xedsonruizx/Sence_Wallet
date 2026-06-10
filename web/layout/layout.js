@@ -22,18 +22,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const authKey = 'senceWalletUser';
     const isAuthenticated = () => localStorage.getItem(authKey) === 'admin';
 
-    if (!isAuthenticated() && pageName !== 'login') {
-        window.location.href = 'master.html?page=login';
-        return;
-    }
-
-    if (isAuthenticated() && pageName === 'login') {
-        window.location.href = 'master.html?page=menu';
-        return;
-    }
-
     const updateNavbar = () => {
-        const loginLink = document.querySelector('a.nav-link[href*="page=login"]');
+        const loginLink = document.querySelector('a.nav-link[href*=\"page=login\"]');
         if (!loginLink) return;
 
         if (isAuthenticated()) {
@@ -56,6 +46,16 @@ document.addEventListener('DOMContentLoaded', function() {
             el.style.display = isAuthenticated() ? '' : 'none';
         });
     };
+
+    if (!isAuthenticated() && pageName !== 'login') {
+        window.location.href = 'master.html?page=login';
+        return;
+    }
+
+    if (isAuthenticated() && pageName === 'login') {
+        window.location.href = 'master.html?page=menu';
+        return;
+    }
 
     const pageScripts = {
         menu: ['../../js/page-redirect.js', '../../js/wallet.js', '../../js/menu.js'],

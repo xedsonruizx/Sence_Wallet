@@ -1,8 +1,11 @@
+// Módulo de envíos de dinero.
+// Administra la lista de contactos, el filtrado y la transferencia de fondos.
 window.SenceWalletSendMoney = (function() {
     var contactsKey = 'senceWalletContacts';
     var selectedContactId = null;
     var validation = window.SenceWalletValidation;
 
+    // Contactos iniciales usados la primera vez que se abre la aplicación.
     var defaultContacts = [
         { id: '1', name: 'John Doe', cbu: '123456789', alias: 'john.doe', bank: 'ABC Bank' },
         { id: '2', name: 'Jane Smith', cbu: '987654321', alias: 'jane.smith', bank: 'XYZ Bank' }
@@ -21,6 +24,7 @@ window.SenceWalletSendMoney = (function() {
         localStorage.setItem(contactsKey, JSON.stringify(contacts));
     }
 
+    // Evita inyección en HTML al renderizar datos de contacto.
     function escapeHtml(text) {
         var div = document.createElement('div');
         div.textContent = text;
@@ -62,6 +66,7 @@ window.SenceWalletSendMoney = (function() {
             return;
         }
 
+        // Genera el HTML de los contactos y permite seleccionarlos.
         contacts.forEach(function(contact) {
             var item = document.createElement('li');
             item.className = 'list-group-item contact-item';
